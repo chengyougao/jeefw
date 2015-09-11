@@ -1,0 +1,214 @@
+<html>
+<head>
+<title></title>
+<style type="text/css">
+body {
+	margin-left: 45px;
+	margin-right: 45px;
+	font-family: Arial Unicode MS;
+	font-size: 10px;
+}
+
+table {
+	margin: auto;
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid #444444;
+}
+
+th,td {
+	text-align: center;
+	border: 1px solid #444444;
+	font-size: 10px;
+	margin-left: 5px;
+}
+
+.mcContent {
+	line-height: 180%;
+	padding: 20px;
+}
+
+.logo {
+	text-align: center;
+}
+
+.title {
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.notes {
+	font-weight: normal;
+	margin-left: 5px;
+	margin-right: 5px;
+	line-height: 18px;
+}
+
+.text_content {
+	margin-left: 5px;
+	margin-right: 5px;
+	line-height: 18px;
+}
+
+.sum_insured_first_row {
+	width: 20%;
+}
+
+.sum_insured_span {
+	font-size: 10px;
+}
+
+.special_agreements_div {
+	page-break-before: always;
+	font-size: 14px;
+	margin-top: 20px;
+}
+
+.special_agreements_div .special_agreements {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.title_right {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.title_right p {
+	text-align: left;
+	margin: 0;
+	margin-left: 50%;
+	padding: 0;
+}
+
+@page {
+	size: 8.5in 11in;
+	@
+	bottom-center
+	{
+	content
+	:
+	"page "
+	counter(
+	page
+	)
+	" of  "
+	counter(
+	pages
+	);
+}
+
+.signature {
+	margin: 0 auto;
+	clear: both;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.signature_table {
+/* 	font-size: 16px; */
+	font-weight: bold;
+}
+
+</style>
+</head>
+
+<body>
+	<div>
+		<div class="title">
+			债权转让与受让详情报告
+		</div>
+		<div class="title_right">
+			<p>报告时间：${reportTime}</p>
+		</div>
+		<div class="insurance_info">
+			<table class="insurance_info_table" border="0" cellpadding="0" cellspacing="0" width="90%">
+				<tr>
+					<td width="20%" style=" font-size:12.0pt;line-height:200%;" >出让人<br /> （原债权人）</td>
+					<td  width="30%" style="font-size:12.0pt;line-height:200%;" >${transferorName}</td>
+					<td width="20%" style=" font-size:12.0pt;line-height:200%;" >受让人<br /> （新债权人） </td>
+					<td width="30%" style=" font-size:12.0pt;line-height:200%;" > ${assigneeName} </td>
+				</tr>
+				<tr>
+					<td width="20%" style=" font-size:12.0pt;line-height:200%;" >身份证<br /> （护照）号码</td>
+					<td width="43%" style=" font-size:12.0pt;line-height:200%;" >${transferorIdentityId}</td>
+					<td width="15%" style=" font-size:12.0pt;line-height:200%;" >身份证<br /> （护照）号码</td>
+					<td style=" font-size:12.0pt;line-height:200%;" >${assigneeIdentityId}</td>
+				</tr>
+			</table>
+			<p style="font-size:12.0pt;line-height:200%;width:90%">转让债权明细：（见附表）</p>
+			<hr></hr>
+		</div>
+		<div class="title" style="margin-top: 30px">
+			出让人声明
+		</div>
+		<div class="text_content">
+			<br /> 
+			<span style="font-size:12.0pt;line-height:200%;" >
+				本人已收到受让人支付的受让价款人民币： ${assigneeMoney}，自愿将上述债权转让给受让人。
+			</span>
+			<br />
+			<span style=" font-size:12.0pt;line-height:200%;" >
+				自款项到账之日起，上述债权转让即生效；债权转让生效后，署有本人签章的本文件即代表受让人对上述债权的所有权。
+			</span>
+			<br />
+			<span style=" font-size:12.0pt;line-height:200%;" >
+				本人特此签章证明。
+			</span> 
+			<div class="title_right">
+				<p>出让人：${transferorName}</p>
+				<table style="margin-left: 40%">
+					<tr>
+						<td width="10%"><span style="font-size:12.0pt;line-height:200%;">签  章：</span></td>
+						<td width="90%" style="line-height:200%;"><img src="${imagePath}/signature.png"/></td>
+					</tr>
+				</table>
+				<p class="logo" style="font-size:12.0pt;line-height:200%;">见证人： <img src="${imagePath}/signature.png" /></p>
+				<p>日  期：${reportTime}</p>
+			</div>
+		</div>
+		<div class="special_agreements_div">
+			<div class="special_agreements title_right">出借编号：</div>
+			<div class="special_agreements title_right">附表：</div>
+			<div class="insurance_info">
+				<table class="insurance_info_table" cellpadding="0" cellspacing="0" width="100%" id="infoTable">
+					<tr class="td_width1">
+						<td width="80%" colspan="8">债务人基本信息<br /> 
+						</td>
+						<td width="20%" colspan="3">债权收益信息</td>
+					</tr>
+					<tr>
+						<td width="5%">序号 </td>
+						<td width="5%">借款人</td>
+						<td width="10%">借款人身份证号码</td>
+						<td width="10%">原始借款额</td>
+						<td width="10%">本次转让价值 </td>
+						<td width="10%">需支付对价</td>
+						<td width="10%">借款人个人情况 </td>
+						<td width="10%">借款人价款用途</td>
+						<td width="6%">还款起始日期</td>
+						<td width="6%">还款期限（月）</td>
+						<td width="8%">剩余还款月数</td>
+					</tr>
+					<#list creditAssigneeList as credit>
+						<tr>
+							<td width="5%">${credit_index+1} </td>
+							<td width="5%">${credit.loanName}</td>
+							<td width="10%">${credit.identityId}</td>
+							<td width="10%">${credit.loanamountBegin}</td>
+							<td width="10%">${credit.transferValue}</td>
+							<td width="10%">${credit.pricePay}</td>
+							<td width="10%">${credit.loanSituation} </td>
+							<td width="10%">${credit.loanpurpose}</td>
+							<td width="6%">${credit.repaymentDate}</td>
+							<td width="6%">${credit.repaymentTerm}</td>
+							<td width="8%">${credit.repaymentTermRemain}</td>
+						</tr>
+					</#list>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

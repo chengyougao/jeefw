@@ -1,0 +1,5 @@
+1、框架的全文检索功能默认不开启，如需开启在applicationContext.xml根据提示放开注释即可。
+2、如需集成CAS单点登录，请联系框架开发者。
+3、邮件发送：代码的邮件发送账号和密码已经失效，您要修改成您自己的实际邮箱账号和密码。搜索javaeeframework@163.com，将其替换。
+4、新注册的用户权限低，默认密码是123456。管理员才可以看到界面全部效果，管理员账号和密码看邮件说明。可以在角色权限管理对用户授权。
+5、APP接口：com.jeefw.app.bean包、com.jeefw.app.logic包和AppSendUtils都是和APP接口有关的代码，测试类查看TestApp。
